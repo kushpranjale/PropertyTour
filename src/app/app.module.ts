@@ -3,10 +3,12 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { IframeComponent } from './iframe/iframe.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    IframeComponent
   ],
   imports: [
     BrowserModule,
