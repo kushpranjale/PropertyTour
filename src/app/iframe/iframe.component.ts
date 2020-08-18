@@ -1,3 +1,4 @@
+import { PropertyServiceService } from './../Services/property-service.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 
@@ -9,7 +10,11 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 export class IframeComponent implements OnInit {
   id: any;
   product: any;
-  constructor(private routes: ActivatedRoute) {}
+  property: any;
+  constructor(
+    private routes: ActivatedRoute,
+    private propertyService: PropertyServiceService
+  ) {}
 
   ngOnInit(): void {
     this.routes.paramMap.subscribe((paraMaps: ParamMap) => {
@@ -19,6 +24,10 @@ export class IframeComponent implements OnInit {
       if (this.id) {
         console.log(this.id);
         this.product = this.id;
+        this.propertyService.getProperty(this.id).subscribe((result) => {
+          this.property = result[0];
+          console.log(result);
+        });
       } else {
       }
     });

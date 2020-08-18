@@ -9,30 +9,79 @@
 <iframe
   [src]="'https://kushpranjale.github.io/?product=' + product | safe_url"
 ></iframe>
-<div class="container text-center">
-  <p style="font-size: x-large;">50 B ashish nagar, Indore</p>
+
+<!-- <p style="font-size: x-large;">{{ property.address }}</p>
+  <p style="font-size: large;">{{ property.property_desc }}</p>
   <table class="table">
     <tr>
-      <th>Price</th>
-      <td>1600</td>
+      <th>Rent</th>
+      <td>{{ property.rent }}</td>
     </tr>
     <tr>
       <th>Floor Size</th>
-      <td>750 sqft</td>
+      <td *ngIf="property.size">{{ property.size }}</td>
+      <td *ngIf="!property.size">N.A.</td>
     </tr>
     <tr>
       <th>Beds</th>
-      <td>3</td>
+      <td>{{ property.bed }}</td>
     </tr>
     <tr>
       <th>Bath</th>
-      <td>3</td>
+      <td>{{ property.bath }}</td>
     </tr>
     <tr>
       <th>Year Built</th>
-      <td>2011</td>
+      <td>{{ property.year_built }}</td>
     </tr>
-  </table>
+  </table> -->
+
+<div
+  class="d-flex flex-sm-row flex-column justify-content-around text-center container details"
+>
+  <div>
+    <p style="font-size: x-large;">Address</p>
+    <div class="d-flex">
+      <i class="material-icons">location_on</i>
+      <p>{{ property.address }}</p>
+    </div>
+    <div class="d-flex">
+      <i class="material-icons">email</i>
+      <p>example@gmail.com</p>
+    </div>
+    <div class="d-flex">
+      <i class="material-icons">call</i>
+      <p>987654321</p>
+    </div>
+  </div>
+  <div>
+    <p style="font-size: x-large;">Details</p>
+    <div class="d-flex">
+      <i class="material-icons">payments</i>
+      <p>Rent</p>
+    </div>
+    <p id="sub-detail">{{ property.rent }}</p>
+    <div class="d-flex">
+      <i class="material-icons">house</i>
+      <p>Size</p>
+    </div>
+    <p id="sub-detail">{{ property.size }}</p>
+    <div class="d-flex">
+      <i class="material-icons">single_bed</i>
+      <p>BedRoom</p>
+    </div>
+    <p id="sub-detail">{{ property.bed }}</p>
+    <div class="d-flex">
+      <i class="material-icons">bathtub</i>
+      <p>BathRoom</p>
+    </div>
+    <p id="sub-detail">{{ property.bath }}</p>
+    <div class="d-flex">
+      <i class="material-icons" style="margin-left: -220px;">calender_today</i>
+      <p>Built Year</p>
+    </div>
+    <p id="sub-detail">{{ property.year_built }}</p>
+  </div>
 </div>
 
 <section id="footer">

@@ -3,7 +3,7 @@ iframe {
   height: 680px;
 }
 nav {
-  background-color: rgba(46, 126, 107) !important;
+  background-color: #204d70 !important;
 }
 img {
   height: 50px;
@@ -20,7 +20,7 @@ section .section-title {
   text-transform: uppercase;
 }
 #footer {
-  background: #007b5e !important;
+  background: #204d70 !important;
 }
 #footer h5 {
   padding-left: 10px;
@@ -74,6 +74,13 @@ section .section-title {
   font-weight: 700;
 }
 
+.details p {
+  margin-left: 10px;
+}
+#sub-detail {
+  margin-top: -15px;
+  font-weight: bold;
+}
 @media (max-width: 767px) {
   #footer h5 {
     padding-left: 0;
