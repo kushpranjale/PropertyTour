@@ -11,6 +11,7 @@ export class IframeComponent implements OnInit {
   id: any;
   product: any;
   property: any;
+  names: any;
   constructor(
     private routes: ActivatedRoute,
     private propertyService: PropertyServiceService
@@ -29,6 +30,10 @@ export class IframeComponent implements OnInit {
           console.log(result);
         });
       } else {
+        this.propertyService.getPropertiesName().subscribe((result) => {
+          this.names = result;
+          console.log(this.names);
+        });
       }
     });
   }

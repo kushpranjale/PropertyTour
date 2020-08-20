@@ -13,4 +13,9 @@ export class PropertyServiceService {
         property_name
     );
   }
+  getPropertiesName() {
+    return this.http.get(
+      'https://whispering-eyrie-36372.herokuapp.com/properties_name'
+    );
+  }
 }

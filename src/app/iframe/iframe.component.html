@@ -6,11 +6,12 @@
     Email Id: sales@digiowner.com
   </div>
 </nav>
-<iframe
-  [src]="'https://kushpranjale.github.io/?product=' + product | safe_url"
-></iframe>
+<div *ngIf="id; else list">
+  <iframe
+    [src]="'https://digiowner.com/360view/?product=' + product | safe_url"
+  ></iframe>
 
-<!-- <p style="font-size: x-large;">{{ property.address }}</p>
+  <!-- <p style="font-size: x-large;">{{ property.address }}</p>
   <p style="font-size: large;">{{ property.property_desc }}</p>
   <table class="table">
     <tr>
@@ -36,58 +37,75 @@
     </tr>
   </table> -->
 
-<div
-  class="d-flex flex-sm-row flex-column justify-content-around text-center container details"
->
-  <div>
-    <p style="font-size: x-large;">Address</p>
-    <div class="d-flex">
-      <i class="material-icons">location_on</i>
-      <p>{{ property.address }}</p>
+  <div
+    class="d-flex flex-sm-row flex-column justify-content-around text-center container details"
+  >
+    <div>
+      <p style="font-size: x-large;">Address</p>
+      <div class="d-flex">
+        <i class="material-icons">location_on</i>
+        <p>{{ property.address }}</p>
+      </div>
+      <div class="d-flex">
+        <i class="material-icons">email</i>
+        <p>example@gmail.com</p>
+      </div>
+      <div class="d-flex">
+        <i class="material-icons">call</i>
+        <p>987654321</p>
+      </div>
     </div>
-    <div class="d-flex">
-      <i class="material-icons">email</i>
-      <p>example@gmail.com</p>
-    </div>
-    <div class="d-flex">
-      <i class="material-icons">call</i>
-      <p>987654321</p>
-    </div>
-  </div>
-  <div>
-    <p style="font-size: x-large;">Details</p>
-    <div class="d-flex">
-      <i class="material-icons">payments</i>
-      <p>Rent</p>
-      <p id="sub-detail">{{ property.rent }}</p>
-    </div>
+    <div>
+      <p style="font-size: x-large;">Details</p>
+      <div class="d-flex">
+        <i class="material-icons">payments</i>
+        <p>Rent</p>
+        <p id="sub-detail">{{ property.rent }}</p>
+      </div>
 
-    <div class="d-flex">
-      <i class="material-icons">house</i>
-      <p>Size</p>
-      <p id="sub-detail">{{ property.size }}</p>
-    </div>
+      <div class="d-flex">
+        <i class="material-icons">house</i>
+        <p>Size</p>
+        <p id="sub-detail">{{ property.size }}</p>
+      </div>
 
-    <div class="d-flex">
-      <i class="material-icons">single_bed</i>
-      <p>BedRoom</p>
-      <p id="sub-detail">{{ property.bed }}</p>
-    </div>
+      <div class="d-flex">
+        <i class="material-icons">single_bed</i>
+        <p>BedRoom</p>
+        <p id="sub-detail">{{ property.bed }}</p>
+      </div>
 
-    <div class="d-flex">
-      <i class="material-icons">bathtub</i>
-      <p>BathRoom</p>
-      <p id="sub-detail">{{ property.bath }}</p>
-    </div>
+      <div class="d-flex">
+        <i class="material-icons">bathtub</i>
+        <p>BathRoom</p>
+        <p id="sub-detail">{{ property.bath }}</p>
+      </div>
 
-    <div class="d-flex">
-      <i class="material-icons" style="margin-left: -220px;">calender_today</i>
-      <p>Built Year</p>
-      <p id="sub-detail">{{ property.year_built }}</p>
+      <div class="d-flex">
+        <i class="material-icons" style="margin-left: -220px;"
+          >calender_today</i
+        >
+        <p>Built Year</p>
+        <p id="sub-detail">{{ property.year_built }}</p>
+      </div>
     </div>
   </div>
 </div>
+<ng-template #list>
+  <div style="height: calc(100vh - 148px);" class="container">
+    <h4>Looking For Property ?</h4>
 
+    <ul>
+      <li
+        *ngFor="let item of names"
+        style="font-size: large; cursor: pointer; margin: auto;"
+        [routerLink]="item.property_name"
+      >
+        {{ item.property_name }} ({{ item.address }})
+      </li>
+    </ul>
+  </div>
+</ng-template>
 <section id="footer">
   <div class="container">
     <div class="row">
