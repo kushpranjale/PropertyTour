@@ -1,14 +1,31 @@
-<nav class="navbar navbar-dark bg-dark mb-1 mat-elevation-z10">
-  <!-- <a class="navbar-brand" href="#">DigiOwner</a> -->
-  <img src="assets/digiowner_log.png" alt="" />
-  <div style="color: white;">
-    Contact No. : 9302185966 <br />
-    Email Id: sales@digiowner.com
-  </div>
-</nav>
-<div *ngIf="id; else list">
+<div style="height: 100%; position: relative">
+  <nav class="navbar navbar-dark bg-dark mb-1 mat-elevation-z10">
+    <!-- <a class="navbar-brand" href="#">DigiOwner</a> -->
+
+    <div>
+      <img src="assets/digiowner_log.png" alt="" />
+      <br />
+      <div
+        style="display: flex; flex-direction: row; cursor: pointer"
+        [routerLink]="['']"
+        routerLinkActive="router-link-active"
+      >
+        <div class="material-icons" style="color: white !important">
+          keyboard_backspace
+        </div>
+        <div style="color: white !important; margin-left: 5px">
+          View More Properties
+        </div>
+      </div>
+    </div>
+    <div style="color: white">
+      Contact No. : 9302185966 <br />
+      Email Id: sales@digiowner.com
+    </div>
+  </nav>
+
   <iframe
-    [src]="'https://digiowner.com/360view/?product=' + product | safe_url"
+    [src]="'http://info.digiowner.com/?product=' + product | safe_url"
   ></iframe>
 
   <!-- <p style="font-size: x-large;">{{ property.address }}</p>
@@ -41,7 +58,7 @@
     class="d-flex flex-sm-row flex-column justify-content-around text-center container details"
   >
     <div>
-      <p style="font-size: x-large;">Address</p>
+      <p style="font-size: x-large">Address</p>
       <div class="d-flex">
         <i class="material-icons">location_on</i>
         <p>{{ property.address }}</p>
@@ -52,11 +69,11 @@
       </div>
       <div class="d-flex">
         <i class="material-icons">call</i>
-        <p>987654321</p>
+        <p>9302185966</p>
       </div>
     </div>
     <div>
-      <p style="font-size: x-large;">Details</p>
+      <p style="font-size: x-large">Details</p>
       <div class="d-flex">
         <i class="material-icons">payments</i>
         <p>Rent</p>
@@ -82,44 +99,14 @@
       </div>
 
       <div class="d-flex">
-        <i class="material-icons" style="margin-left: -220px;"
-          >calender_today</i
-        >
+        <i class="material-icons" style="margin-left: -220px">calender_today</i>
         <p>Built Year</p>
         <p id="sub-detail">{{ property.year_built }}</p>
       </div>
     </div>
   </div>
-</div>
-<ng-template #list>
-  <div style="height: calc(100vh - 148px);" class="container">
-    <h4>Looking For Property ?</h4>
 
-    <ul>
-      <li
-        *ngFor="let item of names"
-        style="font-size: large; cursor: pointer; margin: auto;"
-        [routerLink]="item.property_name"
-      >
-        {{ item.property_name }} ({{ item.address }})
-      </li>
-    </ul>
+  <div class="footer text-center">
+    <p style="margin: auto">© 2020 DigiOwner. All Rights Reserved.</p>
   </div>
-</ng-template>
-<section id="footer">
-  <div class="container">
-    <div class="row">
-      <hr />
-    </div>
-    <div class="row">
-      <div
-        class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white"
-      >
-        <p class="h6">
-          © 2020 DigiOwner. All Rights Reserved
-        </p>
-      </div>
-      <hr />
-    </div>
-  </div>
-</section>
+</div>

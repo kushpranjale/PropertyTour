@@ -1,0 +1,42 @@
+<nav class="navbar navbar-dark bg-dark mb-1 mat-elevation-z10">
+  <!-- <a class="navbar-brand" href="#">DigiOwner</a> -->
+  <img src="assets/digiowner_log.png" alt="" />
+  <div style="color: white">
+    Contact No. : 9302185966 <br />
+    Email Id: sales@digiowner.com
+  </div>
+</nav>
+<div class="elseblock">
+  <div class="container-fluid" style="height: 100%; overflow: hidden">
+    <h4 style="color: #495057">LOOKING FOR PROPERTY ?</h4>
+    <div class="d-flex flex-sm-row flex-column">
+      <div class="card shadow" id="shadow" *ngFor="let item of names">
+        <img [src]="item.image_path" />
+
+        <div id="inside-card" class="d-flex">
+          <i class="material-icons">location_on</i>
+          <p style="color: #495057">{{ item.address }}</p>
+        </div>
+        <div id="inside-card-view" class="d-flex" style="">
+          <i class="material-icons">remove_red_eye</i>
+          <p
+            style="color: #2d9cdb; cursor: pointer"
+            [routerLink]="item.property_name"
+          >
+            360° View
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- <ol>
+    <li
+      *ngFor="let item of names"
+      style="font-size: large; cursor: pointer; margin: auto;"
+    >
+      <a [routerLink]="item.property_name">
+        {{ item.property_name | titlecase }} ({{ item.address }})</a
+      >
+    </li>
+  </ol> -->
+  </div>
+</div>
