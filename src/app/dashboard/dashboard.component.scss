@@ -1,7 +1,7 @@
-iframe {
-  width: 100%;
-  height: 680px;
-}
+// iframe {
+//   width: 100%;
+//   height: 680px;
+// }
 nav {
   background-color: #204d70 !important;
 }
@@ -9,97 +9,147 @@ img {
   height: 50px;
 }
 
-.details p {
-  margin-left: 10px;
+// .details p {
+//   margin-left: 10px;
+// }
+// #sub-detail {
+//   font-weight: bold;
+// }
+
+// ::ng-deep .card {
+//   width: 250px;
+//   height: 350px;
+//   border-radius: 5%;
+//   margin: 15px;
+//   // padding-top: 1%;
+// }
+
+// .shadow {
+//   box-shadow: 0px 10px rgb(17, 38, 63, 0.8) !important;
+// }
+// .card img {
+//   // bottom: 0;
+//   margin-top: 10px;
+//   margin-left: auto;
+//   margin-right: auto;
+//   width: 90%;
+//   height: 50%;
+//   // margin: auto;
+//   border: 1px solid black;
+//   border-radius: 5%;
+// }
+// .card #inside-card {
+//   margin-left: 10px;
+//   margin-right: auto;
+//   margin-top: 10px;
+//   margin-bottom: auto;
+//   height: 50px;
+// }
+// .card #inside-card-view {
+//   margin-left: 10px;
+//   margin-right: auto;
+//   margin-top: 18px;
+//   margin-bottom: auto;
+// }
+// #inside-card p {
+//   margin-left: 5px;
+// }
+// #inside-card-view p {
+//   margin-left: 5px;
+// }
+// .footer {
+//   left: 0;
+//   bottom: 0;
+//   width: 100%;
+//   background-color: #204d70;
+//   color: white;
+//   text-align: center;
+//   height: 60px !important;
+//   padding-top: 1%;
+//   // padding: 5%;
+// }
+// .elseblock {
+//   background-color: #f8f8f8;
+//   width: 100%;
+//   // height: calc(100% - 130px);
+
+//   overflow: hidden;
+// }
+// @media (max-width: 767px) {
+//   img {
+//     height: 30px;
+//   }
+//   nav div {
+//     font-size: 13px;
+//     margin-top: 10px;
+//   }
+//   iframe {
+//     height: calc(100vh - 60px);
+//   }
+//   // .card {
+//   //   margin-top: 15px;
+//   //   // margin: 15px !important;
+//   //   align-self: center;
+//   //   width: 250px;
+//   //   height: 250px;
+//   //   margin-bottom: 10px;
+//   // }
+//   .footer {
+//     position: relative;
+//     margin-top: 13%;
+//   }
+//   .elseblock {
+//     background-color: #f8f8f8;
+//     height: auto;
+//   }
+// }
+
+body {
+  background: #eeeded;
 }
-#sub-detail {
-  font-weight: bold;
+
+::ng-deep .card {
+  // box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  box-shadow: 0px 10px rgb(17, 38, 63, 0.8) !important;
+  transition: all 0.2s ease-in-out;
+  box-sizing: border-box;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: #fff;
+  border-radius: 5%;
+  // min-height: 370px;
+}
+
+.card:hover {
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+.card > .card-inner {
+  padding: 10px;
+}
+.card .header #desc,
+h3 {
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+.card .header {
+  margin-bottom: 5px;
+}
+.card img {
+  width: 100%;
+  height: 180px;
+  border-top-left-radius: 5%;
+  border-top-right-radius: 5%;
+}
+.card-footer {
+  position: absolute;
+  bottom: 0;
+  background-color: transparent;
+  border: 0;
 }
 .material-icons {
   color: #204d70;
 }
-::ng-deep .card {
-  width: 220px;
-  height: 255px;
-  border-radius: 5%;
-  margin-left: 15px;
-  // padding-top: 1%;
-}
-.shadow {
-  box-shadow: 0px 10px rgb(17, 38, 63, 0.8) !important;
-}
-.card img {
-  // bottom: 0;
-  margin-top: 10px;
-  margin-left: auto;
-  margin-right: auto;
-  width: 90%;
-  height: 50%;
-  // margin: auto;
-  border: 1px solid black;
-  border-radius: 5%;
-}
-.card #inside-card {
-  margin-left: 10px;
-  margin-right: auto;
-  margin-top: 10px;
-  margin-bottom: auto;
-  height: 50px;
-}
-.card #inside-card-view {
-  margin-left: 10px;
-  margin-right: auto;
-  margin-top: 18px;
-  margin-bottom: auto;
-}
-#inside-card p {
-  margin-left: 5px;
-}
-#inside-card-view p {
-  margin-left: 5px;
-}
-.footer {
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background-color: #204d70;
-  color: white;
-  text-align: center;
-  height: 60px !important;
-  padding-top: 1%;
-  // padding: 5%;
-}
-.elseblock {
-  background-color: #f8f8f8;
-  width: 100%;
-  height: calc(100% - 130px);
-
-  overflow: hidden;
-}
-@media (max-width: 767px) {
-  img {
-    height: 30px;
-  }
-  nav div {
-    font-size: 13px;
-    margin-top: 10px;
-  }
-  iframe {
-    height: calc(100vh - 60px);
-  }
-  .card {
-    margin-top: 15px;
-    align-self: center;
-    width: 250px;
-    height: 250px;
-    margin-bottom: 10px;
-  }
-  .footer {
-    position: relative;
-    margin-top: 13%;
-  }
-  .elseblock {
-    background-color: #f8f8f8;
-    height: auto;
-  }
+::ng-deep .spinner-grow {
+  width: 1rem;
+  height: 1rem;
 }

@@ -12,19 +12,22 @@ img {
 .details p {
   margin-left: 10px;
 }
+.details a {
+  margin-left: 10px;
+}
 #sub-detail {
   font-weight: bold;
 }
 .material-icons {
   color: #204d70;
 }
-::ng-deep .card {
-  width: 220px;
-  height: 200px;
-  border-radius: 5%;
-  margin-left: 15px;
-  // padding-top: 1%;
-}
+// ::ng-deep .card {
+//   width: 220px;
+//   height: 20px;
+//   border-radius: 5%;
+//   margin-left: 15px;
+//   // padding-top: 1%;
+// }
 .shadow {
   box-shadow: 0px 10px rgb(17, 38, 63, 0.8) !important;
 }

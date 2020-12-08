@@ -8,11 +8,15 @@ import { PropertyServiceService } from '../Services/property-service.service';
 })
 export class DashboardComponent implements OnInit {
   names: any;
+  flag = 0;
   constructor(private propertyService: PropertyServiceService) {}
 
   ngOnInit(): void {
     this.propertyService.getPropertiesName().subscribe((result) => {
+      console.log(result);
+
       this.names = result;
+      this.flag = 1;
     });
   }
 }

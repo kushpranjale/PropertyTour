@@ -7,16 +7,27 @@
   </div>
 </nav>
 <div class="elseblock">
-  <div class="container-fluid" style="height: 100%; overflow: hidden">
+  <div class="container-fluid">
     <h4 style="color: #495057">LOOKING FOR PROPERTY ?</h4>
-    <div class="d-flex flex-sm-row flex-column">
-      <div class="card shadow" id="shadow" *ngFor="let item of names">
-        <img [src]="item.image_path" />
 
+    <!-- <div class="d-flex flex-sm-row flex-column flex-wrap h-100 mb-5 ml-2">
+      <div class="card shadow" id="shadow" *ngFor="let item of names">
+  
+        <img
+          defaultImage="./assets/giphy.gif"
+          [lazyLoad]="item.image_path"
+          offset="100"
+        />
+        <div class="text-center inside-card mt-1">
+          <p style="color: #204d70; font: bold" class="mb-n1">
+            {{ item.property_desc }}
+          </p>
+        </div>
         <div id="inside-card" class="d-flex">
           <i class="material-icons">location_on</i>
           <p style="color: #495057">{{ item.address }}</p>
         </div>
+
         <div id="inside-card-view" class="d-flex" style="">
           <i class="material-icons">remove_red_eye</i>
           <p
@@ -27,7 +38,86 @@
           </p>
         </div>
       </div>
+    </div> -->
+
+    <div class="d-flex flex-wrap">
+      <div class="col-md-3 py-2" *ngFor="let item of names">
+        <div class="card h-100">
+          <div class="image">
+            <img
+              defaultImage="./assets/giphy.gif"
+              [lazyLoad]="item.image_path"
+              offset="100"
+            />
+          </div>
+          <div class="card-inner">
+            <div class="header">
+              <p id="desc">{{ item.property_desc }}</p>
+            </div>
+            <div>
+              <div class="d-flex" style="top: 0">
+                <i class="material-icons">location_on</i>
+                <p style="color: #495057" id="desc" class="ml-2">
+                  {{ item.address }}
+                </p>
+              </div>
+            </div>
+            <!-- <div class="d-flex">
+              <i class="material-icons">remove_red_eye</i>
+              <p
+                style="color: #2d9cdb; cursor: pointer"
+                [routerLink]="item.property_name"
+              >
+                360° View
+              </p>
+            </div> -->
+            <br />
+            <div class="card-footer d-flex">
+              <i class="material-icons">remove_red_eye</i>
+              <p
+                class="ml-2"
+                style="color: #2d9cdb; cursor: pointer"
+                [routerLink]="item.property_name"
+              >
+                360° View
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+
+    <!-- spinner -->
+    <div class="container h-100" *ngIf="!flag">
+      <div class="row h-100 justify-content-center align-items-center">
+        <h2 style="color: #204d70">Please Wait ...</h2>
+        <div class="spinner-grow text-primary" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+        <div class="spinner-grow text-secondary" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+        <div class="spinner-grow text-success" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+        <div class="spinner-grow text-danger" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+        <div class="spinner-grow text-warning" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+        <div class="spinner-grow text-info" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+        <div class="spinner-grow text-light" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+        <div class="spinner-grow text-dark" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+      </div>
+    </div>
+    <!-- <div>{{ flag }}</div> -->
     <!-- <ol>
     <li
       *ngFor="let item of names"
